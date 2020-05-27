@@ -3,7 +3,7 @@ import _ from "lodash";
 
 class TableBody extends Component {
   rederCell(item, colum) {
-    return colum.path ? _.get(item, colum.path) : colum.content(item);
+    return colum.content ? colum.content(item) : _.get(item, colum.path);
   }
 
   render() {
